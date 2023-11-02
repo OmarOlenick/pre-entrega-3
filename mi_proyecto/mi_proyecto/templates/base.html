@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Mi Tienda en Línea{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Tienda en Línea</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/productos/">Productos</a></li>
+            <li><a href="/pedidos/">Pedidos</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Derechos de autor © 2023. Mi Tienda en Línea. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
