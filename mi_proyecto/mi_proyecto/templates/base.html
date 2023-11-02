@@ -20,5 +20,39 @@
     <footer>
         <p>Derechos de autor © 2023. Mi Tienda en Línea. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Lista de Productos -->
+    <div id="productos">
+        <h2>Lista de Productos</h2>
+        <ul>
+            {% for producto in productos %}
+                <li>
+                    {{ producto.nombre }} - {{ producto.precio }} USD
+                    <br>
+                    {{ producto.descripcion }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Lista de Pedidos -->
+    <div id="pedidos">
+        <h2>Lista de Pedidos</h2>
+        <ul>
+            {% for pedido in pedidos %}
+                <li>
+                    Pedido de {{ pedido.cliente.nombre }} ({{ pedido.fecha_pedido|date:"Y-m-d H:i:s" }})
+                    <br>
+                    Productos:
+                    <ul>
+                        {% for producto in pedido.productos.all %}
+                            <li>{{ producto.nombre }}</li>
+                        {% endfor %}
+                    </ul>
+                    Cantidad: {{ pedido.cantidad }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
